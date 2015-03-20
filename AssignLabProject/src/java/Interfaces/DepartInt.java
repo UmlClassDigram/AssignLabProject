@@ -13,47 +13,52 @@ import java.util.List;
  */
 public interface DepartInt {
 
-	
+	 /**
+     *
+     * @param Obj
+     */
+    public abstract void create(Department Obj);
 
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public abstract int create(Department  Obj);
+    /**
+     *
+     * @param Obj
+     */
+    public abstract void deactivate(Department Obj);
 
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public abstract int deactivate(Department  Obj);
+    /**
+     *
+     * @param Obj
+     */
+    public void delete(Department Obj);
 
-	/**
-	 * 
-	 * @param Obj
-     * @return 
-	 */
-	public int delete(Department Obj);
-	
+    public List GetAllDepartActive();
 
-	public List GetAllDepartActive();
-	
+    public List GetAllDepartDeactive();
+    
+    
+    /**
+     *
+     * @param Obj
+     */
+    public List GetOneDepartActive(Department Obj);
 
-	public List GetAllDepartDeactive();
-	
+    /**
+     *
+     * @param Obj
+     */
+    public List GetOneDepartDeactive(Department Obj);
 
-	public List GetOneDepartActive();
-	
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public List GetOneDepartDeactive(Department  Obj);
-	
+    /**
+     *
+     * @param Obj
+     */
+    public abstract void update(Department Obj);
+    
+    /**
+     *
+     * @param Obj
+     */
+    public abstract List getDepartByName(Department Obj);
 
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public abstract int update(Department  Obj);
 
 }

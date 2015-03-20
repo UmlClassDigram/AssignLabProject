@@ -1,72 +1,83 @@
 package DAO;
 
-
 import Pojo.Department;
 import java.util.List;
-
-
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 /**
  * @author JETS_ITI
  * @version 1.0
  * @created 19-Mar-2015 10:55:46 AM
  */
-public class DepartDAO {
+public class DepartDAO extends GenericDAO{
 
-	public DepartDAO(){
 
-	}
+    /**
+     *
+     * @param departObj
+     */
+    public void Delete(Department departObj) {
+        // begin transaction
+        beginTransaction();
+        delete(departObj);
+        getTransaction().commit();
+    }
 
-	public void finalize() throws Throwable {
+    /**
+     *
+     * @param departObj
+     */
+    public void Insert(Department departObj) {
+        // begin transaction
+        beginTransaction();
+        persist(departObj);
+        getTransaction().commit();
+    }
 
-	}
+    public List SelectAllActive() {
+        String hql = "FROM Department p where p.idDepartment=0";
+        Query query = getSession().createQuery(hql);
+        return query.list();
+    }
 
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public int Deactivate(Department Obj){
-		return 0;
-	}
+    public List SelectAllDeactive() {
+        String hql = "FROM Department p where p.idDepartment=1";
+        Query query = getSession().createQuery(hql);
+        return query.list();
+    }
 
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public int Delete(Department Obj){
-		return 0;
-	}
+    /**
+     *
+     * @param departObj
+     */
+    public List SelectOne(Department departObj) {
+        String hql = "FROM Department p where p.idDepartment="+departObj.getIdDepartment();
+        Query query = getSession().createQuery(hql);
+        return query.list();
+    }
+    
+    /**
+     *
+     * @param departObj
+     */
+    public List SelectOneByName(Department departObj) {
+        String hql = "FROM Department p where p.name="+departObj.getName();
+        Query query = getSession().createQuery(hql);
+        return query.list();
+    }
 
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public int Insert(Department Obj){
-		return 0;
-	}
-
-	public List SelectAllActive(){
-		return null;
-	}
-
-	public void SelectAllDeactive(){
-
-	}
-
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public List SelectOne(Department Obj){
-		return null;
-	}
-
-	/**
-	 * 
-	 * @param Obj
-	 */
-	public int Update(Department Obj){
-		return 0;
-	}
+    /**
+     *
+     * @param departObj
+     */
+    public void Update(Department departObj) {
+        // begin transaction
+        beginTransaction();
+        saveOrUpdate(departObj);
+        getTransaction().commit();
+    }
 
 }

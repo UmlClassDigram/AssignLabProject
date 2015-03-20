@@ -12,50 +12,54 @@ import java.util.List;
  * @created 19-Mar-2015 10:55:46 AM
  */
 public class DepartImpl implements DepartInt {
+    private DepartDAO Obj;
 
-	private DepartDAO Obj;
-	public DepartDAO m_DepartDAO;
-
-    @Override
-    public int create(Department Obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public DepartImpl() {
+        this.Obj = new DepartDAO();
     }
 
     @Override
-    public int deactivate(Department Obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void create(Department departObj) {
+        Obj.Insert(departObj);
     }
 
     @Override
-    public int delete(Department Obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deactivate(Department departObj) {
+        Obj.Update(departObj);
+    }
+
+    @Override
+    public void delete(Department departObj) {
+        Obj.Delete(departObj);
     }
 
     @Override
     public List GetAllDepartActive() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Obj.SelectAllActive();
     }
 
     @Override
     public List GetAllDepartDeactive() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Obj.SelectAllDeactive();
     }
 
     @Override
-    public List GetOneDepartActive() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List GetOneDepartActive(Department departObj) {
+        return Obj.SelectOne(departObj);
     }
 
     @Override
-    public List GetOneDepartDeactive(Department Obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List GetOneDepartDeactive(Department departObj) {
+        return Obj.SelectOne(departObj);
     }
 
     @Override
-    public int update(Department Obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(Department departObj) {
+        Obj.Update(departObj);
     }
 
-
-
+    @Override
+    public List getDepartByName(Department departObj) {
+        return Obj.SelectOneByName(departObj);
+    }
 }

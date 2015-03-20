@@ -11,7 +11,7 @@ import java.util.List;
  * @version 1.0
  * @created 19-Mar-2015 10:55:46 AM
  */
-public class GroupDAO {
+public class GroupDAO extends GenericDAO {
 
 	public GroupDAO(){
 
