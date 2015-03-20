@@ -12,7 +12,7 @@ import java.util.List;
  * @version 1.0
  * @created 19-Mar-2015 10:55:49 AM
  */
-public class TraineeDAO {
+public class TraineeDAO  extends GenericDAO{
 
 	public TraineeDAO(){
 

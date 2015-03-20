@@ -11,7 +11,7 @@ import java.util.List;
  * @version 1.0
  * @created 19-Mar-2015 10:55:46 AM
  */
-public class DepartDAO {
+public class DepartDAO  extends GenericDAO{
 
 	public DepartDAO(){
 

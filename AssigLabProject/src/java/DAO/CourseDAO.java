@@ -11,7 +11,7 @@ import java.util.List;
  * @version 1.0
  * @created 19-Mar-2015 10:55:45 AM
  */
-public class CourseDAO {
+public class CourseDAO extends GenericDAO {
 
 	public CourseDAO(){
 

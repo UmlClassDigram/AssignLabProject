@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author rania
  */
-public class QueueDAO  extends GenericDAO  implements QueueInt{
+public class QueueDAO  extends GenericDAO {
     
     
     
