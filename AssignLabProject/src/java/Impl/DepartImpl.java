@@ -12,6 +12,7 @@ import java.util.List;
  * @created 19-Mar-2015 10:55:46 AM
  */
 public class DepartImpl implements DepartInt {
+    
     private DepartDAO Obj;
 
     public DepartImpl() {
