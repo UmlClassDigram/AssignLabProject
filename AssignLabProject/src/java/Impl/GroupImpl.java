@@ -14,7 +14,6 @@ import java.util.List;
 public class GroupImpl implements GroupInt {
 
 	private GroupDAO groupDAO;
-	public GroupDAO m_GroupDAO;
 
     @Override
     public int create(Group obj) {

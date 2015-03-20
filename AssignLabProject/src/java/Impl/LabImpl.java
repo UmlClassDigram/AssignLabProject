@@ -1,3 +1,4 @@
+package Impl;
 
 import DAO.LabDAO;
 import Interfaces.LabInt;
@@ -16,6 +17,11 @@ public class LabImpl implements LabInt {
 
 	public LabDAO m_LabDAO;
 
+    public LabImpl(LabDAO m_LabDAO) {
+        this.m_LabDAO = m_LabDAO;
+    }
+
+        
     @Override
     public int create(Lab obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

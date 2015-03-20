@@ -3,9 +3,6 @@ package DAO;
 import Pojo.Department;
 import java.util.List;
 import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 /**
  * @author JETS_ITI
@@ -19,6 +16,11 @@ public class DepartDAO extends GenericDAO{
      *
      * @param departObj
      */
+    
+    public DepartDAO() {
+        super();
+    }
+
     public void Delete(Department departObj) {
         // begin transaction
         beginTransaction();

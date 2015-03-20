@@ -1,4 +1,4 @@
-
+package Impl;
 import DAO.DepartDAO;
 import Interfaces.DepartInt;
 import Pojo.Department;
@@ -13,11 +13,11 @@ import java.util.List;
  */
 public class DepartImpl implements DepartInt {
     
-    private DepartDAO Obj;
-
-    public DepartImpl() {
-        this.Obj = new DepartDAO();
+    private static DepartDAO Obj;
+    static {
+        Obj = new DepartDAO();
     }
+  
 
     @Override
     public void create(Department departObj) {
